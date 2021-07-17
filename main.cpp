@@ -13,18 +13,16 @@ video: Chapter 2 - Part 3
  Purpose:  This project will teach you how to declare variables and free functions.  
  This will be the first project where the code you write will be compiled and you will be responsible for making sure it compiles before submitting it for review.
  
- 
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+short
+int
+unsigned int
+float
+double
+bool
+char
+void
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -60,10 +58,28 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    short m = 200;
+    short n = 3;
+    short k = 21;
+    int a = 1;
+    int b = 23;
+    int c = 42;
+    unsigned int alpha = 223;
+    unsigned int beta = 11;
+    unsigned int gamma = 4;
+    float x = 5.3f;
+    float y = 3.5f;
+    float z = 0.2f;
+    double xx = 0.00047878;
+    double yy = 0.1237489278;
+    double zz = 3492253.2789237;
+    bool T = true;
+    bool F = false;
+    char p = 'p';
+    char q = 'q';
+    char r = 'r';
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, m, n, k, a, b, c, alpha, beta, gamma, x, y, z, xx, yy, zz, T, F, p, q, r); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -80,43 +96,80 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+void injectFuel(int pistonNum, bool turbo = true)
+{ 
+    ignoreUnused(pistonNum, turbo);
+} 
 /*
  2)
  */
-
+float displayReadings(float speedometerVal, float odometerVal)
+{   
+    ignoreUnused(speedometerVal, odometerVal);
+    return {};
+} 
 /*
  3)
  */
-
+void lightSwitch(bool turnOn)
+{   
+    ignoreUnused(turnOn);
+} 
 /*
  4)
  */
-
+int checkEngineStatus(int errorNo, bool verbose = false, bool checkOil = true)
+{   
+    ignoreUnused(errorNo, verbose, checkOil);
+    return {};
+}
 /*
  5)
  */
-
+float checkSpeed(float distancedTravelled, float timeElapasped)
+{   
+    ignoreUnused(distancedTravelled, timeElapasped);
+    return {};
+}
 /*
  6)
  */
-
+int adjustVolume(bool volUp, int volChange)
+{   
+    ignoreUnused(volUp, volChange);
+    return {};
+}
 /*
  7)
  */
-
+int changeGear(int currentGear, int targetGear, bool transmissionAuto)
+{   
+    ignoreUnused(currentGear, targetGear, transmissionAuto);
+    return {};
+}
 /*
  8)
  */
-
+int slowCar(float currentSpeed, float currentAngle, float slowAmount)
+{   
+    ignoreUnused(currentSpeed, currentAngle, slowAmount);
+    return {};
+}
 /*
  9)
  */
-
+void emergencyEjectSeat(bool eject = true)
+{   
+    ignoreUnused(eject);
+}
 /*
  10)
  */
-
+int shootFlameThrower(float angle, int intensity)
+{   
+    ignoreUnused(angle, intensity);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -137,27 +190,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    injectFuel(3);
     //2)
-    
+    float readings = displayReadings(80, 200000);
     //3)
-    
+    lightSwitch(true);
     //4)
-    
+    int engineStatus = checkEngineStatus(303);
     //5)
-    
+    float speed = checkSpeed(500, 10);
     //6)
-    
+    int volume = adjustVolume(true, 10);
     //7)
-    
+    int gear = changeGear(3, 4, true);
     //8)
-    
+    int slowAmount = slowCar(60, 30, 20);
     //9)
-    
+    emergencyEjectSeat();
     //10)
+    int flames = shootFlameThrower(90, 10);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, readings, engineStatus, speed, volume, gear, slowAmount, flames);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
