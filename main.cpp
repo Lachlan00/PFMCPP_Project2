@@ -70,9 +70,9 @@ void variableDeclarations()
     float x = 5.3f;
     float y = 3.5f;
     float z = 0.2f;
-    double xx = 0.00047878f;
-    double yy = 0.1237489278f;
-    double zz = 3492253.2789237f;
+    double xx = 0.00047878;
+    double yy = 0.1237489278;
+    double zz = 3492253.2789237;
     bool T = true;
     bool F = false;
     char p = 'p';
@@ -210,7 +210,7 @@ int main()
     //10)
     int flames = shootFlameThrower(90, 10);
     
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, readings, engineStatus, speed, volume, gear, slowAmount, flames);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
